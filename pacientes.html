@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>Añadir Paciente</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="encabezado">
+        <h1>Añadir Paciente</h1>
+    </header>
+    <main> 
+        <div class="contenedor-instrucciones">
+            <p>Rellenar los campos con los datos correspondientes, luego hacer clic en enviar para continuar.
+            </p>
+        </div>
+        <div class="contenedor-formulario">
+            <!--El nombre del médico, especialidad, escuela o institución, cedula, dirección del consultorio
+            son datos que pertenecen al usuario que ingresa a la plataforma y no necesitan ser rellenados-->
+            <form action="pacientes.php" name="frmPacientes" id="frmPacientes" method="post" target="_blank">
+                <div>
+                    <label for="Nombre">Nombre: </label>
+                    <input type="text" name="txtname" id="txtname">
+                </div>
+                <div>
+                    <label for="Apellido">Apellidos: </label>
+                    <input type="text" name="txtlastname" id="txtlastname">
+                </div>
+                <div>
+                    <label for="Edad">Edad: </label>
+                    <input type="number" name="numedad" id="numedad">
+                </div>
+                <div>
+                    <label for="Sexo">Sexo: </label>
+                    <input type="text" name="txtsex" id="textsex">
+                </div>
+                <div>
+                    <label for="Altura">Altura: </label>
+                    <input type="number" name="numalt" id="numalt">
+                </div>
+                <div>
+                    <label for="Peso">Peso: </label>
+                    <input type="number" name="numpeso" id="numpeso">
+                </div>  
+                <div>
+                    <label for="Sangre">Tipo de Sangre: </label>
+                    <input type="text" name="txtblood" id="txtblood">
+                </div>
+                <div>
+                    <label for="Extra">Observaciones: </label>
+                    <textarea name="txtExtra" id="txtExtra" cols="30" rows="10"></textarea>
+                </div>
+                <div>
+                    <label for="Correo">Correo electronico: </label>
+                    <input type="text" name="txtcorreo" id="txtcorreo">
+                </div>
+                <div>
+                    <label for="Altura">Telefono: </label>
+                    <input type="number" name="telefono" id="telefono">
+                </div>
+                <div>
+                    <input type="submit" name="Submit" id="submitbutton" value="Submit">
+                </div>
+              </form>
+        </div>
+        <div>
+            <button><a href="main.html">Regresar</a></button>
+        </div>
+    </main>
+    <!--<script>
+        $(document).ready(function(){
+            $("#submitbutton").click(function(){
+                $.ajax({
+                    url:"http://127.0.0.1:5500/pacientes.php",
+                    method: "POST",
+                    headers: {
+                        'Access-Control-Allow-Origin': '*',
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    data:$("#frmPacientes").serialize()
+                });
+            });
+        });
+    </script> -->
+</body>
+</html>

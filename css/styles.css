@@ -67,13 +67,13 @@ html, body {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1rem;
     margin-top: 10rem;
-    margin-bottom: 10rem;
+    margin-bottom: 7rem;
 }
 
 .contenedor-menu button {
     max-width: 60%;
     margin-left: 10rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .contenedor-logout {
@@ -81,4 +81,15 @@ html, body {
     flex-direction: row;
     justify-content: center;
     margin-bottom: 20rem;
+}
+
+/** FORMULARIO PACIENTES **/
+/*.contenedor-formulario {
+    width: 75%;
+} */
+
+#frmPacientes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
 }

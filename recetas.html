@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Recetas</title>
+    <link rel="stylesheet" href="/css/normalize.css">
+	<link rel="stylesheet" href="/css/styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="encabezado">
+        <h1>Generador de Recetas</h1>
+    </header>
+    <main> 
+        <div class="contenedor-instrucciones">
+            <p>Rellenar los campos con los datos correspondientes, luego hacer clic en enviar para continuar.
+            </p>
+        </div>
+        <div class="contenedor-campos_generador">
+            <!--El nombre del médico, especialidad, escuela o institución, cedula, dirección del consultorio
+            son datos que pertenecen al usuario que ingresa a la plataforma y no necesitan ser rellenados-->
+            <form>
+                <div>
+                  <label for="Name">Nombre(s): </label>
+                  <input type="text" name="name">
+                </div>
+                <br>
+                <div>
+                  <label for="Name">Apellidos: </label>
+                  <input type="text" name="lastname">
+                </div>
+                
+                <fieldset>
+                    <legend>Sexo</legend>
+                
+                    <div>
+                      <input type="radio" id="masc" name="sexo" value="masc"
+                             checked>
+                      <label for="masc">Masculino</label>
+                    </div>
+                
+                    <div>
+                      <input type="radio" id="fem" name="sexo" value="fem">
+                      <label for="fem">Femenino</label>
+                    </div>
+                
+                    <div>
+                      <input type="radio" id="otro" name="sexo" value="otro">
+                      <label for="otro">Otro</label>
+                    </div>
+                </fieldset>
+                
+                <label for="start">Fecha:</label>
+
+                <input type="date" id="fechacon" name="fecha"
+                value="2022-05-17"
+                min="2018-01-01" max="2099-12-31">
+                <div class="login-button">
+                  <button><a href="main.html">Enviar</a></button>
+                </div>
+                
+              </form>
+        </div>
+        <div>
+            <button><a href="main.html">Regresar</a></button>
+        </div>
+    </main>
+</body>
+</html>
