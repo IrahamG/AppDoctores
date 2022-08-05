@@ -1,25 +1,51 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Página principal</title>
-</head>
-<body>
-	<header>
-		<h1>Bienvenido, [USER]!</h1>
-	</header>
-	<main>
-		<div>
-			<button>Consultas</button>
-			<button>Calendario</button>
-			<button>Pacientes</button>
-			<button>Medicamentos</button>
-		</div>
-	</main>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Menú</title>
+		<link rel="stylesheet" href="css/normalize.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Basic&display=swap" rel="stylesheet"> 
+	</head>
+	<body>
+		<header class="encabezado">
+			<h1>Bienvenido, [USER]!</h1>
+		</header>
+		<main>
+			<div class="contenedor-menu">
+				<!--Generador de consultas-->
+				<div class="boton-contenedor">
+					<a href="consultasmain.html" class="boton-acceder menu-fix">Consultas</a>
+				</div>
+				<!--Revisar eventos y consultas pendientes-->
+				<div class="boton-contenedor">
+					<a href="calendario.html" class="boton-acceder menu-fix">Calendario</a>
+				</div>
+				<!--Base de datos de los pacientes-->
+				<div class="boton-contenedor">
+					<a href="pacientesmain.html" class="boton-acceder menu-fix">Pacientes</a>
+				</div>
+				<!--Generador de recetas medicas-->
+				<div class="boton-contenedor">
+					<a href="recetasmain.html" class="boton-acceder menu-fix">Recetas</a>
+				</div>
+				<div class="boton-contenedor">
+					<a href="anuncios.html" class="boton-acceder menu-fix">Anuncios</a>
+				</div>
+				
+			</div>
+			<div class="boton-contenedor">
+				<a href="index.html" class="boton-regresar">Cerrar Sesión</a>
+			</div>
+		</main>
 
-	<footer>
-		<p>HADAF © 2022 - Todos los derechos reservados</p>
-	</footer>
-</body>
+		<footer class="contenedor-footer" style="margin-top: 100px;">
+			<p>HADAF © 2022 - Todos los derechos reservados</p>
+		</footer>
+	</body>
 </html>
