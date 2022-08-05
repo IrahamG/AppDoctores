@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas</title>
+    <link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="encabezado">
+        <h1>Crear consulta</h1>
+    </header>
+    <!--Cosas que lleva una consulta. Paciente(Los datos ya se tienen), Fecha, Consultorio y datos del medico.-->
+    <!--Se puede enviar una confirmación por correo al paciente.-->
+    
+    <div class="contenedor-formulario_consultas">
+        <!--El nombre del médico, especialidad, escuela o institución, cedula, dirección del consultorio
+        son datos que pertenecen al usuario que ingresa a la plataforma y no necesitan ser rellenados-->
+        <form action="consultas.php" name="frmConsultas" id="frmConsultas" method="post" target="_blank">
+            <div>
+                <label for="Nombre">Nombre: </label>
+                <input type="text" name="txtname" id="txtname">
+            </div>
+            <div>
+                <label for="Apellido">Apellido: </label>
+                <input type="text" name="txtlastname" id="txtlastname">
+            </div>
+            <div>
+                <label for="Fecha">Fecha de la consulta:</label>
+                <input type="datetime-local" id="fecha" name="fecha"
+                value="2022-06-08T00:00"
+                min="2022-01-01T00:00"
+                max="2099-12-31T00:00">
+            </div>
+            <div>
+                <label for="Tipo">Tipo de Servicio:</label>
+                <select name="column" id="column">
+                    <option value="id">Revisión</option>
+                    <option value="nombre">Examen Médico</option>
+                    <option value="telefono">Otro</option>
+                </select>
+            </div>
+            <div>
+                <label for="Correo">Correo electronico: </label>
+                <input type="text" name="txtcorreo" id="txtcorreo">
+            </div>
+
+            <div>
+                <label for="Telefono">Telefono: </label>
+                <input type="number" name="telefono" id="telefono">
+            </div>
+            <div>
+                <input type="submit" name="Submit" id="submitbutton" value="Submit">
+            </div>
+          </form>
+    </div>
+
+    <div class="boton-contenedor">
+        <a href="main.html" class="boton-regresar">Regresar</a>
+    </div>
+</body>
+</html>

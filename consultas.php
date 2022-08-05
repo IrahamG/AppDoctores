@@ -2,16 +2,12 @@
 
     $txtname = $_POST['txtname'];
     $txtlastname = $_POST['txtlastname'];
-    $numedad = $_POST['numedad'];
-    $txtsex = $_POST['txtsex'];
-    $numalt = $_POST['numalt'];
-    $numpeso = $_POST['numpeso'];
-    $txtblood = $_POST['txtblood'];
-    $txtExtra = $_POST['txtExtra'];
+    $fecha = $_POST['fecha'];
+    $column = $_POST['column'];
     $txtcorreo = $_POST['txtcorreo'];
     $telefono = $_POST['telefono'];
 
-    if(!empty($txtname) || !empty($txtlastname) || !empty($numedad) || !empty($txtsex) || !empty($numalt) || !empty($numpeso) || !empty($txtblood) || !empty($txtExtra) || !empty($txtcorreo)) {
+    if(!empty($txtname) || !empty($txtlastname) || !empty($fecha) || !empty($column) || !empty($txtcorreo)) {
         $host = "localhost";
         $dbusername = "root";
         $dbpass = "";
@@ -22,8 +18,8 @@
             die('connect error('.mysqli_connect_errno().')'.mysqli_connect_error());
         }
         else {
-            $SELECT = "SELECT telefono from tbl_pacientes where telefono = ? limit 1";
-            $INSERT = "INSERT INTO tbl_pacientes (nombre,apellido,edad,sexo,altura,peso,sangre,extra,correo,telefono) values (?,?,?,?,?,?,?,?,?,?)";
+            $SELECT = "SELECT telefono from tbl_consultas where telefono = ? limit 1";
+            $INSERT = "INSERT INTO tbl_consultas (nombre,apellido,fecha,tipo,correo,telefono) values (?,?,?,?,?,?)";
 
             $stmt = $conn->prepare($SELECT);
             $stmt->bind_param("i", $telefono);
@@ -34,7 +30,7 @@
             if($rnum == 0) {
                 $stmt -> close();
                 $stmt = $conn->prepare($INSERT);
-                $stmt ->bind_param("ssisiisssi", $txtname, $txtlastname, $numedad, $txtsex, $numalt, $numpeso, $txtblood, $txtExtra, $txtcorreo, $telefono);
+                $stmt ->bind_param("sssssi", $txtname, $txtlastname, $fecha, $column, $txtcorreo, $telefono);
                 $stmt->execute();
                 echo "Registro completado";
             }
